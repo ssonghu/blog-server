@@ -4,7 +4,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/test
     username: root
-    password: root
+    password:
 #    druid:
 #      # stat: 监控统计用的插件
 #      filters: stat
