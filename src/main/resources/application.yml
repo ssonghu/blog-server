@@ -6,6 +6,7 @@ server:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
+#   可以不用设置,依靠url自动识别
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/test
     username: root
