@@ -1,38 +1,54 @@
 server:
   address: 127.0.0.1
-  port: 8081
+  port: 8080
+
 
 
 spring:
+  # 控制台彩色
+  output:
+    ansi:
+      enabled: always
+#  数据源
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
 #   可以不用设置,依靠url自动识别
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/test
+#    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/blogdb
     username: root
     password: root
-#    druid:
+    #连接池
+    druid:
 #      # stat: 监控统计用的插件
-#      filters: stat
+      filters: stat
 #      # 最大连接池数量
-#      max-active: 20
+      max-active: 20
 #      # 初始化时建立物理连接的个数
-#      initial-size: 3
+      initial-size: 3
 #      # 连接时最大等待时间
-#      max-wait: 60000
+      max-wait: 60000
 #      # 最小连接池数量
-#      min-idle: 1
-#      timeBetweenEvictionRunsMillis: 60000
+      min-idle: 1
+      timeBetweenEvictionRunsMillis: 60000
 #      # 连接保持空闲而不被驱逐的最小时间
-#      minEvictableIdleTimeMillis: 300000
+      minEvictableIdleTimeMillis: 300000
 #      # 用来检测连接是否有效的sql，要求是一个查询语句
-#      validationQuery: select 'x'
+      validationQuery: select 'x'
 #      # 不影响性能,并且保证安全性
-#      testWhileIdle: true
+      testWhileIdle: true
 #      # 开启会影响性能
-#      testOnBorrow: false
+      testOnBorrow: false
 #      # 开启会影响性能
-#      testOnReturn: false
+      testOnReturn: false
 #      # 是否缓存preparedStatement,PSCache对支持游标的数据库性能提升巨大,mysql下建议关闭
-#      poolPreparedStatements: true
-#      maxOpenPreparedStatements: 20
+      poolPreparedStatements: false
+      maxOpenPreparedStatements: 20
+      # 监控登陆用户
+#      stat-view-servlet:
+#        login-username: root
+#        login-password: root
+#        #白名单
+#        allow:
+
+
+
